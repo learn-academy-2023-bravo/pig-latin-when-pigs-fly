@@ -40,6 +40,39 @@ const App = () => {
       if (eachWord[0] === vowelsArray[0]){
          return eachWord + "way"
       }
+
+      // Pseudocode
+      // check for words that have qu in the first syllable
+      // use iteration: if statement
+      // move qu to end of word 
+      // add ay to end of word
+      const quArray = eachWord.split("").filter(letter => {
+        return (
+          letter === "qu" 
+        )
+      })
+      console.log("quArray", quArray)
+
+      let quIndex = eachWord.indexOf("qu")
+      let otherSlice = eachWord.slice(0, quIndex)
+      let quSlice = eachWord.slice(quIndex, quIndex + 2)
+      let restOfWord = eachWord.slice(quIndex + 2)
+      // find location of qu
+      if(eachWord.includes("qu")){
+        return restOfWord + otherSlice + quSlice + "ay"
+      }
+     
+      // 0 1 2 3 4 5
+      // s q u e a l
+      // "squeal".indexOf("qu") // output = 1
+      // // once location is found, put qu at the end of word
+      // "seal" + "quay"
+      // "eal" + "s" + "quay"
+      // // concat ay
+
+
+
+
         
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
