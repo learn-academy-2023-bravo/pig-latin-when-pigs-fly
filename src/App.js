@@ -32,9 +32,15 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
+     //Psuedo code: Create a conditional statement that checks the zero index of the array for vowel. 
+     // apple .indexof('')
+     // if it equals a vowel add way to that original word. 
+     // input: 
 
-    
-
+      if (eachWord[0] === vowelsArray[0]){
+         return eachWord + "way"
+      }
+        
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
