@@ -32,28 +32,36 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
+
+      // consonant-functionality
+      let lettersArray = ["a", "e", "i", "o", "u"]
+      let consonantSlice = eachWord.indexOf(lettersArray)
+      let otherSliceSlice = eachWord.slice(0, consonantSlice)
+
+      if(eachWord.includes(lettersArray)) {
+        return otherSliceSlice + "ay"
+      }
+
+
+
      //Psuedo code: Create a conditional statement that checks the zero index of the array for vowel. 
      // apple .indexof('')
      // if it equals a vowel add way to that original word. 
      // input: 
 
      // vowel-functionality
+
       if (eachWord[0] === vowelsArray[0]){
          return eachWord + "way"
       }
 
       // qu-functionality
+
       // Pseudocode
       // check for words that have qu in the first syllable
       // use iteration: if statement
       // move qu to end of word 
       // add ay to end of word
-      const quArray = eachWord.split("").filter(letter => {
-        return (
-          letter === "qu" 
-        )
-      })
-      console.log("quArray", quArray)
 
       let quIndex = eachWord.indexOf("qu")
       let otherSlice = eachWord.slice(0, quIndex)
@@ -66,6 +74,7 @@ const App = () => {
      
 
       // y-functionality
+
       let yIndex = eachWord.indexOf("y")
       let newSlice = eachWord.slice(0, yIndex)
       let ySlice = eachWord.slice(yIndex, yIndex + 1)
