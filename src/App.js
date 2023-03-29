@@ -37,10 +37,12 @@ const App = () => {
      // if it equals a vowel add way to that original word. 
      // input: 
 
+     // vowel-functionality
       if (eachWord[0] === vowelsArray[0]){
          return eachWord + "way"
       }
 
+      // qu-functionality
       // Pseudocode
       // check for words that have qu in the first syllable
       // use iteration: if statement
@@ -62,13 +64,16 @@ const App = () => {
         return restOfWord + otherSlice + quSlice + "ay"
       }
      
-      // 0 1 2 3 4 5
-      // s q u e a l
-      // "squeal".indexOf("qu") // output = 1
-      // // once location is found, put qu at the end of word
-      // "seal" + "quay"
-      // "eal" + "s" + "quay"
-      // // concat ay
+
+      // y-functionality
+      let yIndex = eachWord.indexOf("y")
+      let newSlice = eachWord.slice(0, yIndex)
+      let ySlice = eachWord.slice(yIndex, yIndex + 1)
+      let remainingWord = eachWord.slice(yIndex + 1)
+
+      if(eachWord.includes("y")){
+        return remainingWord + newSlice + ySlice + "ay"
+      }
 
 
 
@@ -127,7 +132,7 @@ const App = () => {
         </div>
         <p>{inputTranslated}</p>
       </div>
-      <footer>&copy; 2022 | Coded by: Your Names Here!</footer>
+      <footer>&copy; 2023 | Coded by: Spencer & Apolonio</footer>
     </div>
   )
 }
